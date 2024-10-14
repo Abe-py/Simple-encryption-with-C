@@ -1,0 +1,26 @@
+
+#include <ctype.h>
+#include <stdio.h>
+
+// this decrypts the string to the pass.
+int decrypt(char cryptic[40])
+ {
+        int incre = 2;
+
+        for (int i = 0; i < 7; i++) {
+                if (cryptic[i] == ' ') {
+                        cryptic[i] = '\0';
+                        break;
+                }
+
+                cryptic[i] = tolower(cryptic[i] + incre);
+
+                if (i == 0) {
+                        incre -= 1;
+                } else {
+                        incre -= 2;
+                }
+        }
+
+        return 0;
+}
